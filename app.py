@@ -20,7 +20,7 @@ def main():
     try:
         while True:
             line = input()
-            lines.append(line)
+            lines.append(line+"\n")
     except EOFError:
         pass
     user_input = '\n'.join(lines)
