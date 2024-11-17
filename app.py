@@ -1,4 +1,5 @@
-from gpt import ask, get_system_prompt
+from gpt import ask
+from prompt import Prompt
 
 # Three types -- General grammar check (Default), Email(Formal),and text chat(Causual)  
 def get_input_type() -> str:
@@ -12,7 +13,8 @@ def get_input_type() -> str:
 
 def main():
     input_type = get_input_type()
-    system_prompt = get_system_prompt(input_type)
+    prompt = Prompt()
+    system_prompt = prompt.get_system_prompt(input_type)
 
     # Accept multiple lines of input
     print("[GrammarGPT] User input(End input with Ctrl+Z): ")
@@ -40,4 +42,5 @@ def main():
     print(f"[GrammarGPT][{type_map.get(input_type)}]\n{answer}\n\n[End]")
 
 if __name__ == "__main__":
+
     main()
